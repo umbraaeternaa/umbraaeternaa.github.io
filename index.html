@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Andranik (Umbra) — macOS Security & Privacy Systems Engineer</title>
+<meta name="description" content="OS-level security and privacy engineering for macOS — C, ARM64 assembly, Unix daemons, local LLM. Audits, architecture reviews, and security retainers." />
+<style>
+  :root {
+    --bg: #0a0e0f;
+    --panel: #11181a;
+    --line: #1d2a2c;
+    --text: #d6e2e0;
+    --mute: #7d8c8a;
+    --acid: #8cff5a;
+    --amber: #ffb23e;
+    --cyan: #4fd6c8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(1200px 700px at 70% -10%, #0f1a17 0%, var(--bg) 60%);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 88px 0 40px; }
+  .tag {
+    display: inline-block; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--acid); border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 14px; margin-bottom: 26px;
+  }
+  h1 { font-size: 40px; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 18px; }
+  h1 .accent { color: var(--acid); }
+  .lede { font-size: 19px; color: var(--mute); max-width: 680px; }
+  .lede strong { color: var(--text); font-weight: 600; }
+  section { padding: 36px 0; border-top: 1px solid var(--line); }
+  h2 {
+    font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--cyan);
+    margin-bottom: 24px;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 680px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 32px; } }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 24px; position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--acid);
+  }
+  .card.amber::before { background: var(--amber); }
+  .card.cyan::before { background: var(--cyan); }
+  .card h3 { font-size: 19px; margin-bottom: 6px; }
+  .price { font-family: "SF Mono", Menlo, monospace; color: var(--acid); font-size: 17px; margin-bottom: 12px; }
+  .card.amber .price { color: var(--amber); }
+  .card p { color: var(--mute); font-size: 15px; }
+  .card p b { color: var(--text); font-weight: 600; }
+  ul.diff { list-style: none; }
+  ul.diff li { padding: 8px 0; padding-left: 24px; position: relative; color: var(--mute); }
+  ul.diff li::before { content: "›"; position: absolute; left: 4px; color: var(--acid); }
+  ul.diff li b { color: var(--text); font-weight: 600; }
+  .cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+  a.btn {
+    display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px;
+    padding: 13px 22px; border-radius: 10px; transition: transform .12s ease, background .12s ease;
+  }
+  a.btn:hover { transform: translateY(-1px); }
+  a.primary { background: var(--acid); color: #06200a; }
+  a.ghost { border: 1px solid var(--line); color: var(--text); }
+  a.link { color: var(--cyan); text-decoration: none; }
+  a.link:hover { text-decoration: underline; }
+  footer { padding: 40px 0 80px; color: var(--mute); font-size: 14px; }
+  .who p { color: var(--mute); margin-bottom: 14px; }
+  .who p b { color: var(--text); font-weight: 600; }
+  .note { font-size: 13px; color: var(--mute); margin-top: 18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="tag mono">macOS · security · privacy · OS-level</span>
+    <h1>I build <span class="accent">OS-level security &amp; privacy</span> for macOS.<br />Not API wrappers.</h1>
+    <p class="lede">
+      Kernel interfaces, ARM64 assembly, Unix daemon architecture, local-LLM integration,
+      fail-closed cryptography. My reference implementation is <strong>CHIMERA</strong> — an
+      8-module, organism-style privacy system for macOS with 1000+ tests.
+    </p>
+  </header>
+
+  <section>
+    <h2>Work with me</h2>
+    <div class="grid">
+
+      <div class="card">
+        <h3>macOS Security Audit</h3>
+        <div class="price mono">$1,500 – $3,500</div>
+        <p>A full review of weak points across an Apple-silicon Mac fleet — SIP, FileVault,
+        TCC, codesigning, launchd, network policy — delivered as a report plus a ready
+        <b>hardening config</b>. 1–2 weeks.</p>
+      </div>
+
+      <div class="card cyan">
+        <h3>Privacy Architecture Review</h3>
+        <div class="price mono">$2,500 – $5,000</div>
+        <p>A <b>threat model</b> plus IPC / daemon design review and fail-closed
+        recommendations for crypto and storage. For privacy-first products, GDPR-bound
+        software, and AI/ML security review. 2–3 weeks.</p>
+      </div>
+
+    </div>
+    <div class="card amber" style="margin-top:18px">
+      <h3>Security Advisory Retainer</h3>
+      <div class="price mono">$2,000 – $6,000 / month</div>
+      <p>Ongoing security advisory — code review, threat modeling, incident response. AI /
+      LLM security retainer (ML threat modeling): <b>$3,000 – $8,000 / month</b>.</p>
+    </div>
+    <div class="cta" style="margin-top:24px">
+      <a class="btn primary" href="https://calendly.com/natoptanyi/30min">Book a 30-min scoping call →</a>
+      <a class="btn ghost" href="mailto:natoptanyi@gmail.com">Email me</a>
+    </div>
+  </section>
+
+  <section class="who">
+    <h2>Why me</h2>
+    <p>I work at the <b>OS level</b>: C and ARM64 assembly, Unix daemons, IPC, libsodium
+    crypto, macOS codesigning and TCC, local LLMs via Ollama. Most "security" work is API
+    plumbing — this is not that.</p>
+    <p>Background: <b>ship's navigator</b> and data analyst; war veteran. Reading complex
+    systems under uncertainty and making correct calls on incomplete information is the
+    job — at sea and in a threat model. I deliver, I document, and I tell you honestly when
+    something can't be guaranteed (e.g. SSD wear-levelling and secure erase).</p>
+    <ul class="diff">
+      <li><b>CHIMERA</b> — 8 coordinated native modules (C, Python, ARM64 Asm), fail-closed throughout, 1000+ tests.</li>
+      <li><b>Cognitive-load gate</b> — raises friction on dangerous actions when the operator is fatigued. No other privacy tool ships this.</li>
+      <li><b>Honest engineering</b> — documented limits over fake guarantees.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="mono">
+      <a class="link" href="https://github.com/umbraaeternaa/macbastion">github.com/umbraaeternaa/macbastion</a>
+      &nbsp;·&nbsp; Andranik (Umbra) &nbsp;·&nbsp; remote, Western-facing
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
